@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iran Science Center (IRANSC) - Virtual Platform Launch</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      color: #333333;
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    
+    p {
+      color: #666666;
+      font-size: 18px;
+      margin-bottom: 40px;
+      line-height: 1.5;
+    }
+    
+    .countdown {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 40px;
+      font-size: 24px;
+    }
+    
+    .countdown-item {
+      margin: 0 10px;
+      color: #666666;
+    }
+    
+    .countdown-item span {
+      display: block;
+      font-size: 48px;
+      font-weight: bold;
+      color: #333333;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: #ffffff;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .cta-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Welcome to Iran Science Center (IRANSC)</h1>
+    <p>We're excited to announce the upcoming launch of our science virtual platform this summer! Stay tuned for an immersive and educational experience.</p>
+    <div class="countdown">
+      <div class="countdown-item">
+        <span id="days">00</span>Days
+      </div>
+      <div class="countdown-item">
+        <span id="hours">00</span>Hours
+      </div>
+      <div class="countdown-item">
+        <span id="minutes">00</span>Minutes
+      </div>
+      <div class="countdown-item">
+        <span id="seconds">00</span>Seconds
+      </div>
+    </div>
+    <a href="http://iransc.eu.org" class="cta-button">Contact us</a>
+  </div>
+  <script>
+    function countdown() {
+      const launchDate = new Date('2023-08-21T00:00:00Z').getTime();
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days.toString().padStart(2, '0');
+      document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+      document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+      document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+    }
+    setInterval(countdown, 1000);
+  </script>
+</body>
+
+</html>
